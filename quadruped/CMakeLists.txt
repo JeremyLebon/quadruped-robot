@@ -33,14 +33,14 @@ set(linkPath)
 list(APPEND includePath "/usr/include/eigen3")
 
 #To use BLAS acceleration, uncomment the following lines.
-if (${USE_BLAS})
-   message("--------------USE_BLAS-----------------")
-   set(BLA_VENDOR Intel10_64lp)
-   add_definitions(-DEIGEN_USE_MKL_ALL)
-endif()
+# if (${USE_BLAS})
+#    message("--------------USE_BLAS-----------------")
+#    set(BLA_VENDOR Intel10_64lp)
+#    add_definitions(-DEIGEN_USE_MKL_ALL)
+# endif()
 
-find_package(BLAS REQUIRED)
-message(${BLAS_LIBRARIES})
+# find_package(BLAS REQUIRED)
+# message(${BLAS_LIBRARIES})
 
 
 # library yaml
@@ -145,7 +145,7 @@ target_link_libraries(quadruped PUBLIC
     ${PYTHON_LIBRARIES}
     ${YAML_CPP_LIBRARIES}
     ${catkin_LIBRARIES}
-    ${BLAS_LIBRARIES}
+    # ${BLAS_LIBRARIES}
     ${UNITREE_SDK_LIB}
     deeprobotics_legged_sdk
     lcm tinynurbs::tinynurbs
